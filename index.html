@@ -1,24 +1,346 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DJ Prinse</title>
-  </head>
-  <body style="margin:0;background:black;color:white;font-family:sans-serif;">
-    <div style="position:relative;height:60vh;overflow:hidden;">
-      <video autoplay muted loop style="width:100%;height:100%;object-fit:cover;opacity:0.5;">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-      </video>
-      <div style="position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;justify-content:center;align-items:center;">
-        <h1 style="font-size:3rem;">DJ PRINSE</h1>
-        <p>Culture • Sound • Experience</p>
-      </div>
-    </div>
+export default function DJPrinseWebsiteMockup() {
+  const services = [
+    {
+      title: "Private Events",
+      text: "Curated music and smooth energy for birthdays, upscale celebrations, and unforgettable personal moments.",
+    },
+    {
+      title: "Corporate & Brand Events",
+      text: "Polished entertainment for mixers, launches, networking events, activations, and premium brand experiences.",
+    },
+    {
+      title: "MC / Hosting",
+      text: "A confident voice, crowd control, and a clean live presence that keeps the room engaged.",
+    },
+  ];
 
-    <div style="padding:40px;">
-      <h2>Welcome</h2>
-      <p>This is your live DJ website. We’ll upgrade this next with your real videos and mixes.</p>
+  const mixes = [
+    {
+      title: "Amapiano Vibes Vol. 1",
+      description: "A smooth, high-energy blend built for movement, culture, and late-night vibes.",
+      platform: "SoundCloud",
+      url: "#",
+    },
+    {
+      title: "Late Night Afrohouse Set",
+      description: "Afrohouse textures and polished transitions for a premium lounge experience.",
+      platform: "YouTube",
+      url: "#",
+    },
+    {
+      title: "Mash Up Monday Live Mix",
+      description: "A live-style set packed with surprises, crowd energy, and signature transitions.",
+      platform: "Mixcloud",
+      url: "#",
+    },
+  ];
+
+  const testimonials = [
+    "DJ Prinse brought the exact energy we needed. Professional, smooth, and easy to work with.",
+    "From beginning to end, the music and hosting kept everyone engaged.",
+    "He created a premium vibe that felt personal, intentional, and unforgettable.",
+  ];
+
+  const socials = [
+    { label: "Instagram", url: "#" },
+    { label: "TikTok", url: "#" },
+    { label: "YouTube", url: "#" },
+    { label: "SoundCloud", url: "#" },
+  ];
+
+  const stats = [
+    { label: "Live Energy", value: "High" },
+    { label: "Brand Presence", value: "Premium" },
+    { label: "Event Style", value: "Versatile" },
+  ];
+
+  return (
+    <div className="min-h-screen bg-black text-white">
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <div>
+            <h1 className="text-2xl font-black tracking-[0.25em] text-purple-400">DJ PRINSE</h1>
+            <p className="text-xs uppercase tracking-[0.4em] text-yellow-300">Culture • Sound • Experience</p>
+          </div>
+          <nav className="hidden gap-6 text-sm md:flex text-white/80">
+            <a href="#home" className="transition hover:text-purple-300">Home</a>
+            <a href="#about" className="transition hover:text-purple-300">About</a>
+            <a href="#services" className="transition hover:text-purple-300">Services</a>
+            <a href="#music" className="transition hover:text-purple-300">Mixes</a>
+            <a href="#gallery" className="transition hover:text-purple-300">Gallery</a>
+            <a href="#barq" className="transition hover:text-purple-300">BARQ Radio</a>
+            <a href="#booking" className="transition hover:text-purple-300">Book</a>
+            <a href="#contact" className="transition hover:text-purple-300">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section id="home" className="relative overflow-hidden border-b border-white/10 bg-black">
+          <video autoPlay muted loop playsInline className="absolute inset-0 h-full w-full object-cover opacity-35">
+            <source src="/IMG_1483.mov" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 to-purple-950/60" />
+          <div className="absolute inset-0 opacity-30">
+            <div className="absolute left-10 top-24 h-40 w-40 rounded-full bg-purple-500 blur-3xl" />
+            <div className="absolute bottom-10 right-10 h-56 w-56 rounded-full bg-yellow-400 blur-3xl" />
+          </div>
+
+          <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-20 md:grid-cols-[1.1fr_0.9fr] md:py-28">
+            <div className="flex flex-col justify-center">
+              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.45em] text-yellow-300">
+                Atlanta • Live Events • Premium Sound
+              </p>
+              <h2 className="max-w-3xl text-5xl font-black leading-tight md:text-7xl">
+                DJ experiences that move the <span className="text-purple-400">room</span>, elevate the <span className="text-yellow-300">brand</span>, and leave a lasting impression.
+              </h2>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-white/80">
+                DJ Prinse blends sound, presence, and culture to create elevated live experiences for private events, corporate activations, celebrations, and curated nightlife moments.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <a href="#booking" className="rounded-2xl bg-purple-500 px-6 py-3 font-semibold text-white shadow-lg shadow-purple-900/40 transition hover:scale-105">
+                  Book DJ Prinse
+                </a>
+                <a href="#music" className="rounded-2xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white transition hover:border-yellow-300 hover:text-yellow-300">
+                  Listen to Mixes
+                </a>
+              </div>
+              <div className="mt-10 grid gap-4 sm:grid-cols-3">
+                {stats.map((stat) => (
+                  <div key={stat.label} className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur">
+                    <p className="text-xs uppercase tracking-[0.3em] text-white/50">{stat.label}</p>
+                    <p className="mt-2 text-2xl font-bold text-yellow-300">{stat.value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex items-center justify-center">
+              <div className="w-full max-w-xl rounded-[2rem] border border-purple-400/20 bg-white/5 p-4 shadow-2xl shadow-purple-900/30 backdrop-blur-xl">
+                <div className="rounded-[1.5rem] border border-white/10 bg-zinc-950/90 p-8">
+                  <div className="mb-6 flex items-center justify-between">
+                    <div>
+                      <p className="text-sm uppercase tracking-[0.3em] text-white/50">Featured Set</p>
+                      <h3 className="mt-2 text-2xl font-bold">Amapiano Vibes with DJ Prinse</h3>
+                    </div>
+                    <div className="rounded-full bg-yellow-300 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-black">
+                      Live Mix
+                    </div>
+                  </div>
+                  <div className="rounded-2xl bg-gradient-to-r from-purple-500/30 via-yellow-300/20 to-purple-500/30 p-6">
+                    <div className="mb-6 flex items-center gap-3">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-purple-500 text-2xl">▶</div>
+                      <div>
+                        <p className="font-semibold">Mix player ready</p>
+                        <p className="text-sm text-white/70">This section can hold your SoundCloud or YouTube embed</p>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-12 gap-2">
+                      {[40, 65, 50, 82, 57, 90, 55, 74, 66, 85, 52, 70].map((h, i) => (
+                        <div key={i} className="flex h-28 items-end">
+                          <div className="w-full rounded-t-full bg-yellow-300/90" style={{ height: `${h}%` }} />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" className="mx-auto max-w-7xl px-6 py-20">
+          <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr]">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.4em] text-purple-400">About DJ Prinse</p>
+              <h3 className="mt-4 text-4xl font-black md:text-5xl">More than a DJ. A curator of energy, atmosphere, and cultural experience.</h3>
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-white/75">
+                DJ Prinse creates moments people remember. Every set is designed with intention, crowd awareness, and a premium feel that fits the room. From celebrations and private events to corporate environments and branded experiences, the goal is always the same: deliver the right sound for the right moment.
+              </p>
+              <p className="mt-4 max-w-3xl text-lg leading-8 text-white/65">
+                Built on creativity, storytelling, and culture, the DJ Prinse brand goes beyond music. It is about presence, professionalism, and building memorable experiences that feel elevated from start to finish.
+              </p>
+            </div>
+            <div className="rounded-[2rem] border border-white/10 bg-zinc-950 p-8 shadow-xl">
+              <p className="text-sm uppercase tracking-[0.35em] text-yellow-300">Brand Pillars</p>
+              <div className="mt-6 grid gap-4">
+                {[
+                  "Creative storytelling through sound",
+                  "Professional event execution",
+                  "Cultural versatility",
+                  "Premium audience experience",
+                ].map((item) => (
+                  <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-4 text-white/85">
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="services" className="border-y border-white/10 bg-zinc-950/70">
+          <div className="mx-auto max-w-7xl px-6 py-20">
+            <p className="text-sm font-semibold uppercase tracking-[0.4em] text-yellow-300">Services</p>
+            <h3 className="mt-4 text-4xl font-black md:text-5xl">Built for live moments that need the right sound and the right presence.</h3>
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              {services.map((service) => (
+                <div key={service.title} className="rounded-[2rem] border border-white/10 bg-black p-8 shadow-lg transition hover:-translate-y-1 hover:border-purple-400/40">
+                  <div className="mb-4 h-2 w-16 rounded-full bg-purple-400" />
+                  <h4 className="text-2xl font-bold">{service.title}</h4>
+                  <p className="mt-4 leading-7 text-white/70">{service.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="music" className="mx-auto max-w-7xl px-6 py-20">
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.4em] text-purple-400">Mixes</p>
+              <h3 className="mt-4 text-4xl font-black md:text-5xl">Featured sounds, curated for movement and memory.</h3>
+            </div>
+            <a href="#booking" className="text-sm font-semibold uppercase tracking-[0.3em] text-yellow-300">
+              Want this sound at your event?
+            </a>
+          </div>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {mixes.map((mix) => (
+              <div key={mix.title} className="overflow-hidden rounded-[2rem] border border-white/10 bg-zinc-950 shadow-xl">
+                <div className="flex h-52 items-end bg-gradient-to-br from-purple-700 via-black to-yellow-500 p-6">
+                  <div className="rounded-full border border-white/20 bg-black/40 px-4 py-2 text-xs uppercase tracking-[0.3em] text-white/80">
+                    {mix.platform}
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h4 className="text-2xl font-bold">{mix.title}</h4>
+                  <p className="mt-3 text-white/70">{mix.description}</p>
+                  <a href={mix.url} className="mt-6 inline-flex rounded-2xl border border-purple-400/40 px-5 py-3 font-semibold text-purple-300 transition hover:bg-purple-500 hover:text-white">
+                    Open Mix
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="gallery" className="border-y border-white/10 bg-gradient-to-b from-black to-zinc-950">
+          <div className="mx-auto max-w-7xl px-6 py-20">
+            <p className="text-sm font-semibold uppercase tracking-[0.4em] text-yellow-300">Gallery</p>
+            <h3 className="mt-4 text-4xl font-black md:text-5xl">A visual brand experience built from live moments.</h3>
+            <div className="mt-10 grid gap-4 md:grid-cols-4 auto-rows-[180px]">
+              <div className="rounded-[2rem] border border-white/10 bg-white/5 p-3 md:col-span-2 md:row-span-2">
+                <video src="/IMG_1591.mov" autoPlay muted loop playsInline className="h-full w-full rounded-[1.5rem] object-cover" />
+              </div>
+              <div className="rounded-[2rem] border border-white/10 bg-white/5 p-3 md:col-span-2">
+                <video src="/IMG_5220.mov" autoPlay muted loop playsInline className="h-full w-full rounded-[1.5rem] object-cover" />
+              </div>
+              <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6">
+                <div className="flex h-full items-end rounded-[1.25rem] bg-gradient-to-br from-purple-500/20 via-zinc-900 to-yellow-300/20 p-5">
+                  <p className="text-xl font-semibold">Crowd Moments</p>
+                </div>
+              </div>
+              <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6">
+                <div className="flex h-full items-end rounded-[1.25rem] bg-gradient-to-br from-yellow-300/10 via-zinc-900 to-purple-500/20 p-5">
+                  <p className="text-xl font-semibold">Brand Presence</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="barq" className="mx-auto max-w-7xl px-6 py-20">
+          <div className="rounded-[2.5rem] border border-yellow-300/20 bg-gradient-to-r from-zinc-950 via-purple-950/50 to-zinc-950 p-10 shadow-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.45em] text-yellow-300">BARQ Radio</p>
+            <h3 className="mt-4 text-4xl font-black md:text-5xl">A platform that extends the brand beyond the booth.</h3>
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-white/75">
+              DJ Prinse is not just about playing music. BARQ Radio expands the brand into culture, conversation, and curated content. This section can feature interviews, artist spotlights, live sessions, and original media that keeps the platform active and unique.
+            </p>
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              <div className="rounded-2xl bg-black/40 px-5 py-5">Featured Artist</div>
+              <div className="rounded-2xl bg-black/40 px-5 py-5">This Week’s Interview</div>
+              <div className="rounded-2xl bg-black/40 px-5 py-5">Live Stream Player</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="booking" className="border-y border-white/10 bg-zinc-950/80">
+          <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 md:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.4em] text-purple-400">Booking</p>
+              <h3 className="mt-4 text-4xl font-black md:text-5xl">Book a premium sound experience.</h3>
+              <p className="mt-6 text-lg leading-8 text-white/75">
+                Designed for serious inquiries and quality events. This section can be connected to your email so booking requests come straight to you.
+              </p>
+              <div className="mt-8 space-y-4 text-white/80">
+                <p>• Private events</p>
+                <p>• Corporate activations</p>
+                <p>• Weddings and celebrations</p>
+                <p>• Community and cultural events</p>
+              </div>
+            </div>
+
+            <div className="rounded-[2rem] border border-white/10 bg-black p-8 shadow-2xl">
+              <h4 className="text-2xl font-bold">Booking Request Form</h4>
+              <div className="mt-6 grid gap-4 md:grid-cols-2">
+                {[
+                  "Full Name",
+                  "Email Address",
+                  "Event Type",
+                  "Event Date",
+                  "Phone Number",
+                  "Event Location",
+                ].map((field) => (
+                  <div key={field} className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-white/50">
+                    {field}
+                  </div>
+                ))}
+                <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-white/50 md:col-span-2 min-h-[120px]">
+                  Event Details / Vision
+                </div>
+              </div>
+              <button className="mt-6 w-full rounded-2xl bg-yellow-300 px-6 py-4 font-bold text-black transition hover:scale-[1.01]">
+                Submit Inquiry
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-7xl px-6 py-20">
+          <p className="text-sm font-semibold uppercase tracking-[0.4em] text-yellow-300">Testimonials</p>
+          <h3 className="mt-4 text-4xl font-black md:text-5xl">What clients should feel when they land here.</h3>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {testimonials.map((quote, i) => (
+              <div key={i} className="rounded-[2rem] border border-white/10 bg-zinc-950 p-8">
+                <p className="text-lg leading-8 text-white/80">“{quote}”</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="contact" className="border-t border-white/10 bg-gradient-to-r from-purple-950/40 via-black to-yellow-950/20">
+          <div className="mx-auto max-w-7xl px-6 py-20 text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.4em] text-purple-300">Contact</p>
+            <h3 className="mt-4 text-4xl font-black md:text-6xl">Let’s create an unforgettable experience.</h3>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/75">
+              Ready for bookings, collaborations, curated events, and brand experiences. Add your email and social links here and this becomes your digital home base.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <a href="#booking" className="rounded-2xl bg-purple-500 px-6 py-3 font-semibold text-white">Book DJ Prinse</a>
+              <a href="#music" className="rounded-2xl border border-white/15 px-6 py-3 font-semibold text-white">Listen Now</a>
+            </div>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              {socials.map((social) => (
+                <a key={social.label} href={social.url} className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 transition hover:border-yellow-300 hover:text-yellow-300">
+                  {social.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
-  </body>
-</html>
+  );
+}

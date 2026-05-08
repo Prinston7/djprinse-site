@@ -1,100 +1,200 @@
+<!-- MEDIA SECTION -->
 <section class="section" id="media">
   <div class="container">
+
     <div class="center">
       <span class="eyebrow">Media & Social</span>
-      <h2 class="section-title">Watch, follow, and connect</h2>
+
+      <h2 class="section-title">
+        Watch DJ Prinse Live
+      </h2>
+
       <p class="section-copy">
-        Keep up with live content, event moments, performance clips, and booking updates across DJ Prinse platforms.
+        Experience the energy, crowd interaction, and live performance atmosphere of DJ Prinse events.
       </p>
     </div>
 
-    <div class="media-grid" style="margin-top: 34px;">
+    <div class="media-grid" style="margin-top:40px;">
 
-      <!-- FEATURED VIDEO -->
-    div class="media-card">
-  <h3>Featured Live Performance</h3>
-  <p>Watch DJ Prinse live in action.</p>
+      <!-- VIDEO CARD -->
+      <div class="media-card">
 
-  <iframe 
-    width="100%" 
-    height="500"
-    src="https://www.youtube.com/embed/7VGbKPp_q0k"
-    title="DJ Prinse Live Video"
-    frameborder="0"
-    allowfullscreen>
-  </iframe>
-</div>
+        <h3>Featured Live Performance</h3>
+
+        <p>
+          Live crowd interaction and high-energy event experience from DJ Prinse.
+        </p>
+
+        <div class="video-wrapper">
+
+          <iframe
+            src="https://www.youtube.com/embed/7VGbKPp_q0k?autoplay=1&mute=1&loop=1&playlist=7VGbKPp_q0k"
+            title="DJ Prinse Live Performance"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+
+        </div>
+
+      </div>
+
       <!-- INSTAGRAM -->
       <div class="media-card">
-        <h3>Instagram Presence</h3>
-        <p>
-          Follow live recaps, reels, behind-the-scenes moments, and crowd reactions from recent events.
-        </p>
 
-        <a
-          href="https://www.instagram.com/djprinse_?igsh=MXYxcml2OWV3dWI3Mg%3D%3D&utm_source=qr"
-          target="_blank"
-          rel="noopener noreferrer">
-          Visit Instagram
-        </a>
-      </div>
-
-      <!-- BOOKING -->
-      <div class="media-card">
-        <h3>Booking Contact</h3>
-        <p>
-          Ready to book DJ Prinse for your event? Send all inquiries directly through the booking form or email.
-        </p>
-
-        <a href="mailto:itsdjprinse@gmail.com">
-          itsdjprinse@gmail.com
-        </a>
-      </div>
-
-    </div>
-
-    <!-- SOCIAL GRID -->
-    <div class="social-grid" style="margin-top: 22px;">
-
-      <div class="social-card">
         <h3>Instagram</h3>
+
         <p>
-          Best for quick updates, event clips, reels, and showing personality and crowd engagement.
+          Follow event recaps, reels, behind-the-scenes moments, and crowd reactions.
         </p>
 
         <a
           href="https://www.instagram.com/djprinse_?igsh=MXYxcml2OWV3dWI3Mg%3D%3D&utm_source=qr"
-          target="_blank"
-          rel="noopener noreferrer">
+          target="_blank">
           @djprinse_
         </a>
+
       </div>
 
-      <div class="social-card">
+      <!-- YOUTUBE -->
+      <div class="media-card">
+
         <h3>YouTube</h3>
+
         <p>
-          Watch live performances, event recaps, promo videos, and crowd moments from DJ Prinse events.
+          Watch more live performances, mixes, and promo videos from DJ Prinse.
         </p>
 
         <a
           href="https://youtube.com/shorts/7VGbKPp_q0k"
-          target="_blank"
-          rel="noopener noreferrer">
+          target="_blank">
           Watch on YouTube
         </a>
-      </div>
 
-      <div class="social-card">
-        <h3>Booking Email</h3>
-        <p>
-          For confirmed event inquiries, availability, rates, and event details.
-        </p>
-
-        <a href="mailto:itsdjprinse@gmail.com">
-          itsdjprinse@gmail.com
-        </a>
       </div>
 
     </div>
   </div>
 </section>
+
+<!-- BOOKING SECTION -->
+<section class="section" id="booking">
+
+  <div class="container booking-wrap">
+
+    <div class="booking-side">
+
+      <span class="eyebrow">Booking</span>
+
+      <h2 class="section-title">
+        Book DJ Prinse
+      </h2>
+
+      <p>
+        Fill out the booking form below for private events, weddings, clubs,
+        campus events, corporate functions, and live experiences.
+      </p>
+
+    </div>
+
+    <!-- FORM -->
+    <form
+      action="https://formsubmit.co/itsdjprinse@gmail.com"
+      method="POST"
+      class="booking-form">
+
+      <!-- FORM SETTINGS -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New DJ Prinse Booking Request">
+      <input type="hidden" name="_next" value="https://djprinse.com">
+
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" name="phone" required>
+        </div>
+
+        <div class="form-group">
+          <label>Event Type</label>
+
+          <select name="event_type" required>
+            <option value="">Select Event</option>
+            <option>Wedding</option>
+            <option>Club Event</option>
+            <option>Birthday Party</option>
+            <option>Corporate Event</option>
+            <option>College Event</option>
+            <option>Private Party</option>
+            <option>Festival</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Event Date</label>
+          <input type="date" name="event_date" required>
+        </div>
+
+        <div class="form-group">
+          <label>City / State</label>
+          <input type="text" name="city_state" required>
+        </div>
+
+        <div class="form-group full-width">
+          <label>Event Details</label>
+
+          <textarea
+            name="message"
+            rows="6"
+            placeholder="Tell me about your event..."
+            required></textarea>
+        </div>
+
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-primary"
+        style="width:100%; margin-top:20px;">
+
+        Submit Booking Request
+
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+<!-- VIDEO CSS -->
+<style>
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+</style>

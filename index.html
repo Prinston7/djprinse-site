@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Official website of DJ Prinse. Book high-energy DJ experiences for weddings, clubs, proms, private events, and live entertainment."
+    content="Official website of DJ Prinse. Book high-energy DJ experiences for weddings, clubs, private events, proms, and live entertainment."
   />
 
   <style>
@@ -38,22 +38,22 @@
     :root{
       --gold:#d4af37;
       --black:#050505;
-      --dark:#0e0e0e;
+      --dark:#111111;
       --panel:rgba(255,255,255,0.08);
-      --border:rgba(255,255,255,0.1);
+      --border:rgba(255,255,255,0.12);
     }
 
-    /* Animated background */
+    /* Animated glow */
 
     body::before{
       content:"";
       position:fixed;
-      width:600px;
-      height:600px;
+      width:700px;
+      height:700px;
       background:radial-gradient(circle, rgba(212,175,55,0.15), transparent 70%);
-      top:-200px;
-      left:-200px;
-      animation:moveGlow 10s linear infinite alternate;
+      top:-250px;
+      left:-250px;
+      animation:glowMove 10s linear infinite alternate;
       z-index:-2;
     }
 
@@ -64,26 +64,26 @@
       height:500px;
       background:radial-gradient(circle, rgba(212,175,55,0.08), transparent 70%);
       bottom:-200px;
-      right:-150px;
-      animation:moveGlow2 12s linear infinite alternate;
+      right:-180px;
+      animation:glowMove2 12s linear infinite alternate;
       z-index:-2;
     }
 
-    @keyframes moveGlow{
+    @keyframes glowMove{
       from{
         transform:translate(0,0);
       }
       to{
-        transform:translate(120px,80px);
+        transform:translate(120px,90px);
       }
     }
 
-    @keyframes moveGlow2{
+    @keyframes glowMove2{
       from{
         transform:translate(0,0);
       }
       to{
-        transform:translate(-100px,-70px);
+        transform:translate(-120px,-70px);
       }
     }
 
@@ -99,7 +99,7 @@
       width:100%;
       top:0;
       z-index:999;
-      background:rgba(0,0,0,0.75);
+      background:rgba(0,0,0,0.7);
       backdrop-filter:blur(12px);
       border-bottom:1px solid var(--border);
     }
@@ -112,7 +112,7 @@
     }
 
     .logo{
-      font-size:1.5rem;
+      font-size:1.6rem;
       font-weight:900;
       color:var(--gold);
       letter-spacing:2px;
@@ -120,7 +120,7 @@
 
     .nav-links{
       display:flex;
-      gap:25px;
+      gap:24px;
       font-weight:700;
     }
 
@@ -136,7 +136,7 @@
       align-items:center;
       justify-content:center;
       text-align:center;
-      padding:140px 0 80px;
+      padding:140px 0 90px;
       position:relative;
     }
 
@@ -144,8 +144,8 @@
       font-size:clamp(4rem,10vw,8rem);
       text-transform:uppercase;
       line-height:0.9;
-      font-weight:900;
       margin-bottom:25px;
+      font-weight:900;
     }
 
     .hero h1 span{
@@ -154,11 +154,11 @@
     }
 
     .hero p{
-      max-width:750px;
+      max-width:760px;
       margin:auto;
       line-height:1.8;
-      color:rgba(255,255,255,0.8);
       font-size:1.15rem;
+      color:rgba(255,255,255,0.82);
     }
 
     .hero-buttons{
@@ -175,6 +175,7 @@
       font-weight:900;
       transition:0.3s;
       border:1px solid rgba(255,255,255,0.12);
+      display:inline-block;
     }
 
     .btn-gold{
@@ -188,7 +189,7 @@
     }
 
     .btn:hover{
-      transform:translateY(-5px) scale(1.04);
+      transform:translateY(-5px) scale(1.03);
     }
 
     /* VIDEO */
@@ -201,14 +202,17 @@
 
     .video-box{
       width:min(100%,430px);
-      aspect-ratio:9 / 16;
-      border-radius:30px;
-      overflow:hidden;
+      background:rgba(255,255,255,0.06);
       border:2px solid var(--gold);
+      border-radius:28px;
+      padding:45px 30px;
+      text-align:center;
+      backdrop-filter:blur(10px);
+
       box-shadow:
-      0 0 30px rgba(212,175,55,0.4),
-      0 0 80px rgba(212,175,55,0.2);
-      background:black;
+      0 0 25px rgba(212,175,55,0.25),
+      0 0 70px rgba(212,175,55,0.1);
+
       animation:pulse 4s infinite;
     }
 
@@ -224,13 +228,19 @@
       }
     }
 
-    .video-box iframe{
-      width:100%;
-      height:100%;
-      border:0;
+    .video-box h3{
+      color:var(--gold);
+      font-size:2rem;
+      margin-bottom:18px;
     }
 
-    /* SECTIONS */
+    .video-box p{
+      color:rgba(255,255,255,0.8);
+      line-height:1.7;
+      margin-bottom:28px;
+    }
+
+    /* SECTION */
 
     section{
       padding:100px 0;
@@ -244,14 +254,14 @@
 
     .section-subtitle{
       text-align:center;
-      max-width:750px;
+      max-width:760px;
       margin:auto;
       line-height:1.7;
       color:rgba(255,255,255,0.75);
       margin-bottom:50px;
     }
 
-    /* CARDS */
+    /* SERVICES */
 
     .grid{
       display:grid;
@@ -271,7 +281,7 @@
     .card:hover{
       transform:translateY(-10px);
       border-color:var(--gold);
-      box-shadow:0 25px 50px rgba(0,0,0,0.4);
+      box-shadow:0 25px 50px rgba(0,0,0,0.45);
     }
 
     .card h3{
@@ -289,7 +299,7 @@
 
     .booking{
       background:
-      radial-gradient(circle at top, rgba(212,175,55,0.15), transparent 40%),
+      radial-gradient(circle at top, rgba(212,175,55,0.14), transparent 40%),
       #090909;
     }
 
@@ -375,6 +385,7 @@
     }
 
   </style>
+
 </head>
 
 <body>
@@ -414,9 +425,9 @@
       </h1>
 
       <p>
-        Bringing unforgettable energy, live crowd interaction,
-        and nonstop vibes to weddings, clubs, private parties,
-        campus events, proms, and elite entertainment experiences.
+        Bringing unforgettable energy, crowd interaction,
+        and elite entertainment experiences to weddings,
+        clubs, proms, campus events, and private parties.
       </p>
 
       <div class="hero-buttons">
@@ -443,18 +454,27 @@
 
       </div>
 
-      <!-- VIDEO -->
+      <!-- FEATURED VIDEO -->
 
       <div class="video-section">
 
         <div class="video-box">
 
-          <iframe
-            src="https://www.youtube.com/embed/7VGbKPp_q0k?autoplay=1&mute=1&loop=1&playlist=7VGbKPp_q0k&controls=1&rel=0&playsinline=1"
-            title="DJ Prinse Featured Video"
-            allow="autoplay; encrypted-media; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
+          <h3>
+            Featured Performance
+          </h3>
+
+          <p>
+            Watch DJ Prinse bring live energy and unforgettable moments to the crowd.
+          </p>
+
+          <a
+            href="https://youtube.com/shorts/7VGbKPp_q0k"
+            target="_blank"
+            class="btn btn-gold"
+          >
+            ▶ Watch Video
+          </a>
 
         </div>
 
@@ -486,7 +506,7 @@
 
           <p>
             Elegant receptions, unforgettable dance floors,
-            smooth transitions, and high-energy moments.
+            smooth transitions, and nonstop energy.
           </p>
 
         </div>
@@ -569,7 +589,7 @@
 
         <textarea
           name="Message"
-          placeholder="Tell me about your event, crowd size, music style, location, and any special requests."
+          placeholder="Tell me about your event, location, crowd size, music style, and special requests."
         ></textarea>
 
         <button type="submit" class="submit-btn">
@@ -593,8 +613,8 @@
       </h2>
 
       <p class="section-subtitle">
-        Follow DJ Prinse for event recaps, live moments,
-        mixes, and upcoming experiences.
+        Follow DJ Prinse for event recaps, mixes,
+        live moments, and upcoming experiences.
       </p>
 
       <div class="social-buttons">

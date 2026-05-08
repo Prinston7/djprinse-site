@@ -3,361 +3,604 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>DJ Prinse | Official Website</title>
-  <meta name="description" content="Book DJ Prinse for clubs, private events, weddings, corporate events, campus events, and high-energy live experiences." />
+
+  <meta
+    name="description"
+    content="DJ Prinse official website. Book DJ Prinse for weddings, clubs, campus events, private parties, and live entertainment experiences."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <style>
-    :root {
-      --bg: #050505;
-      --panel: rgba(255,255,255,0.08);
-      --text: #ffffff;
-      --muted: rgba(255,255,255,0.72);
-      --gold: #d4af37;
-      --line: rgba(255,255,255,0.14);
-      --radius: 22px;
-      --max: 1200px;
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
 
-    * { box-sizing: border-box; }
+    html{
+      scroll-behavior:smooth;
+    }
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:#050505;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:white;
+    }
+
+    :root{
+      --gold:#d4af37;
+      --dark:#050505;
+      --panel:rgba(255,255,255,0.08);
+      --border:rgba(255,255,255,0.12);
+    }
+
+    .container{
+      width:min(92%,1200px);
+      margin:auto;
+    }
+
+    /* NAVBAR */
+
+    header{
+      position:fixed;
+      width:100%;
+      top:0;
+      z-index:999;
+      background:rgba(0,0,0,0.75);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--border);
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
+    }
+
+    .logo{
+      font-size:1.5rem;
+      font-weight:900;
+      color:var(--gold);
+      letter-spacing:2px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:28px;
+      font-weight:700;
+    }
+
+    .nav-links a:hover{
+      color:var(--gold);
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      overflow:hidden;
+    }
+
+    .hero-video{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      overflow:hidden;
+      z-index:-2;
+    }
+
+    .hero-video iframe{
+      width:100vw;
+      height:56.25vw;
+      min-height:100vh;
+      min-width:177.77vh;
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      pointer-events:none;
+    }
+
+    .overlay{
+      position:absolute;
+      inset:0;
       background:
-        radial-gradient(circle at top, rgba(212,175,55,0.18), transparent 35%),
-        linear-gradient(180deg, #050505, #111, #050505);
-      color: var(--text);
+      linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.6),
+        rgba(0,0,0,0.75)
+      );
+      z-index:-1;
     }
 
-    a { color: inherit; text-decoration: none; }
-
-    .container {
-      width: min(92%, var(--max));
-      margin: auto;
+    .hero-content{
+      padding-top:100px;
     }
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(0,0,0,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--line);
+    .hero h1{
+      font-size:clamp(4rem,10vw,8rem);
+      text-transform:uppercase;
+      line-height:0.9;
+      font-weight:900;
+      text-shadow:0 0 20px rgba(0,0,0,0.7);
     }
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 0;
+    .hero h1 span{
+      color:var(--gold);
     }
 
-    .logo {
-      font-size: 1.4rem;
-      font-weight: 900;
-      color: var(--gold);
-      letter-spacing: 1px;
+    .hero p{
+      max-width:700px;
+      margin:25px auto;
+      font-size:1.2rem;
+      line-height:1.7;
+      color:rgba(255,255,255,0.85);
     }
 
-    .nav-links {
-      display: flex;
-      gap: 22px;
-      font-weight: 700;
-      font-size: 0.95rem;
+    .hero-buttons{
+      display:flex;
+      justify-content:center;
+      gap:18px;
+      flex-wrap:wrap;
+      margin-top:35px;
     }
 
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      padding: 80px 0;
+    .btn{
+      padding:16px 28px;
+      border-radius:999px;
+      font-weight:900;
+      transition:0.3s;
+      border:1px solid rgba(255,255,255,0.15);
     }
 
-    .hero h1 {
-      font-size: clamp(3rem, 9vw, 7rem);
-      margin: 0;
-      line-height: 0.95;
-      text-transform: uppercase;
+    .btn-gold{
+      background:var(--gold);
+      color:black;
     }
 
-    .hero span {
-      color: var(--gold);
+    .btn-dark{
+      background:rgba(255,255,255,0.08);
+      backdrop-filter:blur(8px);
     }
 
-    .hero p {
-      max-width: 760px;
-      margin: 24px auto;
-      color: var(--muted);
-      font-size: 1.15rem;
-      line-height: 1.7;
+    .btn:hover{
+      transform:translateY(-4px) scale(1.03);
     }
 
-    .buttons {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 28px;
+    /* SECTION */
+
+    section{
+      padding:100px 0;
     }
 
-    .btn {
-      padding: 15px 24px;
-      border-radius: 999px;
-      font-weight: 800;
-      border: 1px solid var(--line);
-      transition: 0.3s;
+    .section-title{
+      text-align:center;
+      font-size:clamp(2.5rem,5vw,4rem);
+      margin-bottom:18px;
     }
 
-    .btn-gold {
-      background: var(--gold);
-      color: #000;
+    .section-subtitle{
+      text-align:center;
+      max-width:760px;
+      margin:auto;
+      color:rgba(255,255,255,0.75);
+      line-height:1.7;
+      margin-bottom:50px;
     }
 
-    .btn:hover {
-      transform: translateY(-3px);
+    /* SERVICES */
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:25px;
     }
 
-    section {
-      padding: 85px 0;
+    .card{
+      background:var(--panel);
+      border:1px solid var(--border);
+      padding:35px;
+      border-radius:24px;
+      transition:0.3s;
+      backdrop-filter:blur(10px);
     }
 
-    .section-title {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      margin-bottom: 18px;
-      text-align: center;
+    .card:hover{
+      transform:translateY(-8px);
+      border-color:var(--gold);
+      box-shadow:0 20px 50px rgba(0,0,0,0.4);
     }
 
-    .section-subtitle {
-      color: var(--muted);
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 40px;
-      line-height: 1.7;
+    .card h3{
+      color:var(--gold);
+      margin-bottom:15px;
+      font-size:1.5rem;
     }
 
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 28px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    .card p{
+      line-height:1.7;
+      color:rgba(255,255,255,0.8);
     }
 
-    .video-wrap {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      background: #000;
+    /* BOOKING */
+
+    .booking{
+      background:
+      radial-gradient(circle at top, rgba(212,175,55,0.15), transparent 30%),
+      #080808;
     }
 
-    .video-wrap iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
+    form{
+      max-width:850px;
+      margin:auto;
+      display:grid;
+      gap:18px;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+    input,
+    textarea{
+      width:100%;
+      padding:18px;
+      border:none;
+      border-radius:16px;
+      background:rgba(255,255,255,0.08);
+      color:white;
+      border:1px solid rgba(255,255,255,0.1);
+      font-size:1rem;
     }
 
-    .service h3 {
-      color: var(--gold);
-      margin-top: 0;
+    textarea{
+      min-height:170px;
+      resize:vertical;
     }
 
-    .service p {
-      color: var(--muted);
-      line-height: 1.6;
+    input::placeholder,
+    textarea::placeholder{
+      color:rgba(255,255,255,0.55);
     }
 
-    form {
-      display: grid;
-      gap: 16px;
-      max-width: 760px;
-      margin: auto;
+    .submit-btn{
+      background:var(--gold);
+      color:black;
+      border:none;
+      font-weight:900;
+      cursor:pointer;
+      padding:18px;
+      border-radius:999px;
+      font-size:1rem;
+      transition:0.3s;
     }
 
-    input, textarea, select {
-      width: 100%;
-      padding: 16px;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.08);
-      color: white;
-      font-size: 1rem;
+    .submit-btn:hover{
+      transform:scale(1.02);
     }
 
-    textarea {
-      min-height: 140px;
+    /* SOCIAL */
+
+    .social-buttons{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+      margin-top:40px;
     }
 
-    input::placeholder, textarea::placeholder {
-      color: rgba(255,255,255,0.55);
+    footer{
+      padding:40px 0;
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,0.1);
+      color:rgba(255,255,255,0.6);
+      background:black;
     }
 
-    .submit {
-      cursor: pointer;
-      border: none;
-      background: var(--gold);
-      color: black;
-      font-weight: 900;
-      padding: 16px;
-      border-radius: 999px;
-      font-size: 1rem;
-    }
+    /* MOBILE */
 
-    footer {
-      padding: 35px 0;
-      text-align: center;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-    }
+    @media(max-width:900px){
 
-    @media (max-width: 800px) {
-      .nav-links {
-        display: none;
+      .grid{
+        grid-template-columns:1fr;
       }
 
-      .grid {
-        grid-template-columns: 1fr;
+      .nav-links{
+        display:none;
       }
 
-      .hero {
-        min-height: auto;
+      .hero h1{
+        font-size:4rem;
       }
+
     }
+
   </style>
 </head>
 
 <body>
 
+  <!-- NAV -->
+
   <header>
     <div class="container">
+
       <nav>
-        <div class="logo">DJ PRINSE</div>
-        <div class="nav-links">
-          <a href="#video">Video</a>
-          <a href="#services">Services</a>
-          <a href="#booking">Book Now</a>
-          <a href="#social">Social</a>
+
+        <div class="logo">
+          DJ PRINSE
         </div>
+
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#booking">Booking</a>
+          <a href="#social">Socials</a>
+        </div>
+
       </nav>
+
     </div>
   </header>
 
-  <main>
+  <!-- HERO -->
 
-    <section class="hero">
-      <div class="container">
-        <h1>DJ <span>Prinse</span></h1>
+  <section class="hero">
+
+    <div class="hero-video">
+
+      <iframe
+        src="https://www.youtube.com/embed/7VGbKPp_q0k?autoplay=1&mute=1&loop=1&playlist=7VGbKPp_q0k&controls=0&showinfo=0&rel=0"
+        title="DJ Prinse Featured Video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+
+    </div>
+
+    <div class="overlay"></div>
+
+    <div class="container">
+
+      <div class="hero-content">
+
+        <h1>
+          DJ <span>Prinse</span>
+        </h1>
+
         <p>
-          Bringing high-energy music, crowd control, and unforgettable vibes to clubs,
-          weddings, private events, corporate functions, campus events, and live celebrations.
+          Bringing energy, crowd interaction, unforgettable music,
+          and elite entertainment experiences to clubs, weddings,
+          private events, campus functions, and major celebrations.
         </p>
 
-        <div class="buttons">
-          <a class="btn btn-gold" href="#booking">Book DJ Prinse</a>
-          <a class="btn" href="https://www.instagram.com/djprinse_" target="_blank">Follow on Instagram</a>
-          <a class="btn" href="https://youtu.be/W2rRd9I6RsA" target="_blank">Watch YouTube</a>
+        <div class="hero-buttons">
+
+          <a href="#booking" class="btn btn-gold">
+            Book DJ Prinse
+          </a>
+
+          <a
+            href="https://www.instagram.com/djprinse_/"
+            target="_blank"
+            class="btn btn-dark"
+          >
+            Instagram
+          </a>
+
+          <a
+            href="https://youtu.be/W2rRd9I6RsA"
+            target="_blank"
+            class="btn btn-dark"
+          >
+            YouTube
+          </a>
+
         </div>
-      </div>
-    </section>
 
-    <section id="video">
-      <div class="container">
-        <h2 class="section-title">Featured Live Performance</h2>
-        <p class="section-subtitle">
-          Watch the energy, crowd interaction, and live event experience from DJ Prinse.
-        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        The Experience
+      </h2>
+
+      <p class="section-subtitle">
+        DJ Prinse delivers high-energy performances that connect
+        with crowds, elevate events, and create unforgettable moments.
+        From campus events to nightlife experiences, every set is built
+        to move the room.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+
+  <section id="services">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Services
+      </h2>
+
+      <p class="section-subtitle">
+        Professional entertainment experiences tailored for all event types.
+      </p>
+
+      <div class="grid">
 
         <div class="card">
-          <div class="video-wrap">
-            <iframe
-              src="https://www.youtube.com/embed/7VGbKPp_q0k"
-              title="DJ Prinse Featured Video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
-          </div>
+          <h3>Weddings</h3>
+          <p>
+            Elegant receptions, energetic dance floors,
+            custom playlists, and unforgettable moments.
+          </p>
         </div>
-      </div>
-    </section>
 
-    <section id="services">
-      <div class="container">
-        <h2 class="section-title">Services</h2>
-        <p class="section-subtitle">
-          Professional DJ services for events that need energy, personality, and a memorable sound.
-        </p>
-
-        <div class="grid">
-          <div class="card service">
-            <h3>Private Events</h3>
-            <p>Birthdays, celebrations, family events, parties, and custom experiences.</p>
-          </div>
-
-          <div class="card service">
-            <h3>Weddings</h3>
-            <p>Reception music, ceremony support, announcements, and dance floor energy.</p>
-          </div>
-
-          <div class="card service">
-            <h3>Corporate & Campus</h3>
-            <p>Corporate functions, brand events, college events, proms, and live activations.</p>
-          </div>
+        <div class="card">
+          <h3>Private Events</h3>
+          <p>
+            Birthday parties, celebrations, luxury events,
+            and personalized entertainment experiences.
+          </p>
         </div>
-      </div>
-    </section>
 
-    <section id="booking">
-      <div class="container">
-        <h2 class="section-title">Book DJ Prinse</h2>
-        <p class="section-subtitle">
-          Submit your event details below. This form will open your email with the booking request ready to send.
-        </p>
-
-        <form action="mailto:itsdjprinse@gmail.com" method="post" enctype="text/plain">
-          <input type="text" name="Name" placeholder="Your Name" required />
-          <input type="email" name="Email" placeholder="Your Email" required />
-          <input type="tel" name="Phone" placeholder="Phone Number" />
-          <input type="text" name="Event Type" placeholder="Event Type" required />
-          <input type="date" name="Event Date" required />
-          <input type="text" name="Location" placeholder="Event Location / Venue" />
-          <textarea name="Message" placeholder="Tell me about your event, music style, time, budget, and any special requests."></textarea>
-          <button class="submit" type="submit">Send Booking Request</button>
-        </form>
-      </div>
-    </section>
-
-    <section id="social">
-      <div class="container">
-        <h2 class="section-title">Connect with DJ Prinse</h2>
-        <p class="section-subtitle">
-          Follow, watch, and stay updated with new mixes, event clips, and booking announcements.
-        </p>
-
-        <div class="buttons">
-          <a class="btn btn-gold" href="mailto:itsdjprinse@gmail.com">Email Booking</a>
-          <a class="btn" href="https://www.instagram.com/djprinse_" target="_blank">Instagram</a>
-          <a class="btn" href="https://youtu.be/W2rRd9I6RsA" target="_blank">YouTube</a>
+        <div class="card">
+          <h3>Campus & Clubs</h3>
+          <p>
+            High-energy crowd engagement, nightlife events,
+            Greek life functions, and live entertainment.
+          </p>
         </div>
-      </div>
-    </section>
 
-  </main>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- BOOKING -->
+
+  <section id="booking" class="booking">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Book DJ Prinse
+      </h2>
+
+      <p class="section-subtitle">
+        Ready to bring energy to your event? Submit your booking inquiry below.
+      </p>
+
+      <form
+        action="mailto:itsdjprinse@gmail.com"
+        method="post"
+        enctype="text/plain"
+      >
+
+        <input
+          type="text"
+          name="Name"
+          placeholder="Full Name"
+          required
+        />
+
+        <input
+          type="email"
+          name="Email"
+          placeholder="Email Address"
+          required
+        />
+
+        <input
+          type="text"
+          name="Event"
+          placeholder="Event Type"
+          required
+        />
+
+        <input
+          type="date"
+          name="Date"
+          required
+        />
+
+        <textarea
+          name="Message"
+          placeholder="Tell me about your event, location, expected crowd, music style, and any special requests."
+        ></textarea>
+
+        <button type="submit" class="submit-btn">
+          Send Booking Request
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+  <!-- SOCIAL -->
+
+  <section id="social">
+
+    <div class="container">
+
+      <h2 class="section-title">
+        Stay Connected
+      </h2>
+
+      <p class="section-subtitle">
+        Follow DJ Prinse for live clips, mixes, event announcements,
+        and behind-the-scenes moments.
+      </p>
+
+      <div class="social-buttons">
+
+        <a
+          href="https://www.instagram.com/djprinse_/"
+          target="_blank"
+          class="btn btn-gold"
+        >
+          Instagram
+        </a>
+
+        <a
+          href="https://youtu.be/W2rRd9I6RsA"
+          target="_blank"
+          class="btn btn-dark"
+        >
+          YouTube
+        </a>
+
+        <a
+          href="mailto:itsdjprinse@gmail.com"
+          class="btn btn-dark"
+        >
+          Booking Email
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
 
   <footer>
+
     <div class="container">
       © 2026 DJ Prinse. All Rights Reserved.
     </div>
+
   </footer>
 
 </body>

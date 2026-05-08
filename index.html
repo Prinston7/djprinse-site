@@ -2,17 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>DJ Prinse | Official Website</title>
 
   <meta
     name="description"
-    content="DJ Prinse official website. Book DJ Prinse for weddings, clubs, campus events, private parties, and live entertainment experiences."
+    content="Official website of DJ Prinse. Book high-energy DJ experiences for weddings, clubs, proms, private events, and live entertainment."
   />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <style>
 
@@ -40,9 +37,54 @@
 
     :root{
       --gold:#d4af37;
-      --dark:#050505;
+      --black:#050505;
+      --dark:#0e0e0e;
       --panel:rgba(255,255,255,0.08);
-      --border:rgba(255,255,255,0.12);
+      --border:rgba(255,255,255,0.1);
+    }
+
+    /* Animated background */
+
+    body::before{
+      content:"";
+      position:fixed;
+      width:600px;
+      height:600px;
+      background:radial-gradient(circle, rgba(212,175,55,0.15), transparent 70%);
+      top:-200px;
+      left:-200px;
+      animation:moveGlow 10s linear infinite alternate;
+      z-index:-2;
+    }
+
+    body::after{
+      content:"";
+      position:fixed;
+      width:500px;
+      height:500px;
+      background:radial-gradient(circle, rgba(212,175,55,0.08), transparent 70%);
+      bottom:-200px;
+      right:-150px;
+      animation:moveGlow2 12s linear infinite alternate;
+      z-index:-2;
+    }
+
+    @keyframes moveGlow{
+      from{
+        transform:translate(0,0);
+      }
+      to{
+        transform:translate(120px,80px);
+      }
+    }
+
+    @keyframes moveGlow2{
+      from{
+        transform:translate(0,0);
+      }
+      to{
+        transform:translate(-100px,-70px);
+      }
     }
 
     .container{
@@ -50,7 +92,7 @@
       margin:auto;
     }
 
-    /* NAVBAR */
+    /* NAV */
 
     header{
       position:fixed;
@@ -58,7 +100,7 @@
       top:0;
       z-index:999;
       background:rgba(0,0,0,0.75);
-      backdrop-filter:blur(10px);
+      backdrop-filter:blur(12px);
       border-bottom:1px solid var(--border);
     }
 
@@ -78,7 +120,7 @@
 
     .nav-links{
       display:flex;
-      gap:28px;
+      gap:25px;
       font-weight:700;
     }
 
@@ -90,49 +132,12 @@
 
     .hero{
       min-height:100vh;
-      position:relative;
       display:flex;
       align-items:center;
       justify-content:center;
       text-align:center;
-      overflow:hidden;
-    }
-
-    .hero-video{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      overflow:hidden;
-      z-index:-2;
-    }
-
-    .hero-video iframe{
-      width:100vw;
-      height:56.25vw;
-      min-height:100vh;
-      min-width:177.77vh;
-      position:absolute;
-      top:50%;
-      left:50%;
-      transform:translate(-50%, -50%);
-      pointer-events:none;
-    }
-
-    .overlay{
-      position:absolute;
-      inset:0;
-      background:
-      linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.6),
-        rgba(0,0,0,0.75)
-      );
-      z-index:-1;
-    }
-
-    .hero-content{
-      padding-top:100px;
+      padding:140px 0 80px;
+      position:relative;
     }
 
     .hero h1{
@@ -140,27 +145,28 @@
       text-transform:uppercase;
       line-height:0.9;
       font-weight:900;
-      text-shadow:0 0 20px rgba(0,0,0,0.7);
+      margin-bottom:25px;
     }
 
     .hero h1 span{
       color:var(--gold);
+      text-shadow:0 0 20px rgba(212,175,55,0.4);
     }
 
     .hero p{
-      max-width:700px;
-      margin:25px auto;
-      font-size:1.2rem;
-      line-height:1.7;
-      color:rgba(255,255,255,0.85);
+      max-width:750px;
+      margin:auto;
+      line-height:1.8;
+      color:rgba(255,255,255,0.8);
+      font-size:1.15rem;
     }
 
     .hero-buttons{
+      margin-top:35px;
       display:flex;
       justify-content:center;
       gap:18px;
       flex-wrap:wrap;
-      margin-top:35px;
     }
 
     .btn{
@@ -168,7 +174,7 @@
       border-radius:999px;
       font-weight:900;
       transition:0.3s;
-      border:1px solid rgba(255,255,255,0.15);
+      border:1px solid rgba(255,255,255,0.12);
     }
 
     .btn-gold{
@@ -182,10 +188,49 @@
     }
 
     .btn:hover{
-      transform:translateY(-4px) scale(1.03);
+      transform:translateY(-5px) scale(1.04);
     }
 
-    /* SECTION */
+    /* VIDEO */
+
+    .video-section{
+      margin-top:60px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .video-box{
+      width:min(100%,430px);
+      aspect-ratio:9 / 16;
+      border-radius:30px;
+      overflow:hidden;
+      border:2px solid var(--gold);
+      box-shadow:
+      0 0 30px rgba(212,175,55,0.4),
+      0 0 80px rgba(212,175,55,0.2);
+      background:black;
+      animation:pulse 4s infinite;
+    }
+
+    @keyframes pulse{
+      0%{
+        transform:scale(1);
+      }
+      50%{
+        transform:scale(1.02);
+      }
+      100%{
+        transform:scale(1);
+      }
+    }
+
+    .video-box iframe{
+      width:100%;
+      height:100%;
+      border:0;
+    }
+
+    /* SECTIONS */
 
     section{
       padding:100px 0;
@@ -199,14 +244,14 @@
 
     .section-subtitle{
       text-align:center;
-      max-width:760px;
+      max-width:750px;
       margin:auto;
-      color:rgba(255,255,255,0.75);
       line-height:1.7;
+      color:rgba(255,255,255,0.75);
       margin-bottom:50px;
     }
 
-    /* SERVICES */
+    /* CARDS */
 
     .grid{
       display:grid;
@@ -224,9 +269,9 @@
     }
 
     .card:hover{
-      transform:translateY(-8px);
+      transform:translateY(-10px);
       border-color:var(--gold);
-      box-shadow:0 20px 50px rgba(0,0,0,0.4);
+      box-shadow:0 25px 50px rgba(0,0,0,0.4);
     }
 
     .card h3{
@@ -237,15 +282,15 @@
 
     .card p{
       line-height:1.7;
-      color:rgba(255,255,255,0.8);
+      color:rgba(255,255,255,0.78);
     }
 
     /* BOOKING */
 
     .booking{
       background:
-      radial-gradient(circle at top, rgba(212,175,55,0.15), transparent 30%),
-      #080808;
+      radial-gradient(circle at top, rgba(212,175,55,0.15), transparent 40%),
+      #090909;
     }
 
     form{
@@ -274,23 +319,23 @@
 
     input::placeholder,
     textarea::placeholder{
-      color:rgba(255,255,255,0.55);
+      color:rgba(255,255,255,0.5);
     }
 
     .submit-btn{
       background:var(--gold);
       color:black;
       border:none;
-      font-weight:900;
-      cursor:pointer;
       padding:18px;
       border-radius:999px;
+      font-weight:900;
+      cursor:pointer;
       font-size:1rem;
       transition:0.3s;
     }
 
     .submit-btn:hover{
-      transform:scale(1.02);
+      transform:scale(1.03);
     }
 
     /* SOCIAL */
@@ -298,7 +343,7 @@
     .social-buttons{
       display:flex;
       justify-content:center;
-      gap:20px;
+      gap:18px;
       flex-wrap:wrap;
       margin-top:40px;
     }
@@ -334,9 +379,10 @@
 
 <body>
 
-  <!-- NAV -->
+  <!-- NAVBAR -->
 
   <header>
+
     <div class="container">
 
       <nav>
@@ -346,7 +392,6 @@
         </div>
 
         <div class="nav-links">
-          <a href="#about">About</a>
           <a href="#services">Services</a>
           <a href="#booking">Booking</a>
           <a href="#social">Socials</a>
@@ -355,85 +400,65 @@
       </nav>
 
     </div>
+
   </header>
 
   <!-- HERO -->
 
   <section class="hero">
 
-    <div class="hero-video">
-
-      <iframe
-        src="https://www.youtube.com/embed/7VGbKPp_q0k?autoplay=1&mute=1&loop=1&playlist=7VGbKPp_q0k&controls=0&showinfo=0&rel=0"
-        title="DJ Prinse Featured Video"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
-
-    </div>
-
-    <div class="overlay"></div>
-
     <div class="container">
 
-      <div class="hero-content">
+      <h1>
+        DJ <span>Prinse</span>
+      </h1>
 
-        <h1>
-          DJ <span>Prinse</span>
-        </h1>
+      <p>
+        Bringing unforgettable energy, live crowd interaction,
+        and nonstop vibes to weddings, clubs, private parties,
+        campus events, proms, and elite entertainment experiences.
+      </p>
 
-        <p>
-          Bringing energy, crowd interaction, unforgettable music,
-          and elite entertainment experiences to clubs, weddings,
-          private events, campus functions, and major celebrations.
-        </p>
+      <div class="hero-buttons">
 
-        <div class="hero-buttons">
+        <a href="#booking" class="btn btn-gold">
+          Book DJ Prinse
+        </a>
 
-          <a href="#booking" class="btn btn-gold">
-            Book DJ Prinse
-          </a>
+        <a
+          href="https://www.instagram.com/djprinse_/"
+          target="_blank"
+          class="btn btn-dark"
+        >
+          Instagram
+        </a>
 
-          <a
-            href="https://www.instagram.com/djprinse_/"
-            target="_blank"
-            class="btn btn-dark"
-          >
-            Instagram
-          </a>
+        <a
+          href="https://youtu.be/W2rRd9I6RsA"
+          target="_blank"
+          class="btn btn-dark"
+        >
+          YouTube
+        </a>
 
-          <a
-            href="https://youtu.be/W2rRd9I6RsA"
-            target="_blank"
-            class="btn btn-dark"
-          >
-            YouTube
-          </a>
+      </div>
+
+      <!-- VIDEO -->
+
+      <div class="video-section">
+
+        <div class="video-box">
+
+          <iframe
+            src="https://www.youtube.com/embed/7VGbKPp_q0k?autoplay=1&mute=1&loop=1&playlist=7VGbKPp_q0k&controls=1&rel=0&playsinline=1"
+            title="DJ Prinse Featured Video"
+            allow="autoplay; encrypted-media; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
 
         </div>
 
       </div>
-
-    </div>
-
-  </section>
-
-  <!-- ABOUT -->
-
-  <section id="about">
-
-    <div class="container">
-
-      <h2 class="section-title">
-        The Experience
-      </h2>
-
-      <p class="section-subtitle">
-        DJ Prinse delivers high-energy performances that connect
-        with crowds, elevate events, and create unforgettable moments.
-        From campus events to nightlife experiences, every set is built
-        to move the room.
-      </p>
 
     </div>
 
@@ -446,37 +471,46 @@
     <div class="container">
 
       <h2 class="section-title">
-        Services
+        DJ Services
       </h2>
 
       <p class="section-subtitle">
-        Professional entertainment experiences tailored for all event types.
+        Premium entertainment experiences built to energize your crowd and elevate your event.
       </p>
 
       <div class="grid">
 
         <div class="card">
+
           <h3>Weddings</h3>
+
           <p>
-            Elegant receptions, energetic dance floors,
-            custom playlists, and unforgettable moments.
+            Elegant receptions, unforgettable dance floors,
+            smooth transitions, and high-energy moments.
           </p>
+
         </div>
 
         <div class="card">
+
           <h3>Private Events</h3>
+
           <p>
-            Birthday parties, celebrations, luxury events,
-            and personalized entertainment experiences.
+            Birthdays, luxury parties, celebrations,
+            and personalized event experiences.
           </p>
+
         </div>
 
         <div class="card">
+
           <h3>Campus & Clubs</h3>
+
           <p>
-            High-energy crowd engagement, nightlife events,
-            Greek life functions, and live entertainment.
+            High-energy crowd interaction, nightlife,
+            Greek events, concerts, and live entertainment.
           </p>
+
         </div>
 
       </div>
@@ -496,7 +530,8 @@
       </h2>
 
       <p class="section-subtitle">
-        Ready to bring energy to your event? Submit your booking inquiry below.
+        Ready to bring unforgettable energy to your event?
+        Submit your booking inquiry below.
       </p>
 
       <form
@@ -534,7 +569,7 @@
 
         <textarea
           name="Message"
-          placeholder="Tell me about your event, location, expected crowd, music style, and any special requests."
+          placeholder="Tell me about your event, crowd size, music style, location, and any special requests."
         ></textarea>
 
         <button type="submit" class="submit-btn">
@@ -558,8 +593,8 @@
       </h2>
 
       <p class="section-subtitle">
-        Follow DJ Prinse for live clips, mixes, event announcements,
-        and behind-the-scenes moments.
+        Follow DJ Prinse for event recaps, live moments,
+        mixes, and upcoming experiences.
       </p>
 
       <div class="social-buttons">
